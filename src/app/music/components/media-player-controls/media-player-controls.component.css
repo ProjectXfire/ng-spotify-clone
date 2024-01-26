@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.controls-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  gap: var(--gap-1);
+}
+
+.controls__play {
+  width: 35px;
+  height: 35px;
+  padding-left: 7px;
+  padding-top: 2px;
+  background-color: var(--color-2);
+  border-radius: 50px;
+  border: none;
+  color: var(--slate-light);
+  cursor: pointer;
+}
+
+.controls__play:active {
+  scale: 0.95;
+}
+
+.controls__next {
+  border: none;
+  background-color: transparent;
+  color: var(--slate-light);
+  cursor: pointer;
+}
+
+.controls__next:active {
+  scale: 0.95;
+}
+
+.progress-bar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.progress-bar-container p {
+  font-size: 0.8rem;
+}
+
+.progress-bar {
+  width: 100%;
+}
+
+:host ::ng-deep .p-slider-handle {
+  display: none;
+}
+
+:host ::ng-deep .p-slider .p-slider-handle:hover {
+  border-color: var(--color-2);
+  background: var(--color-2);
+}
+
+:host ::ng-deep .p-slider .p-slider-handle:focus {
+  border-color: var(--color-2);
+  box-shadow: none;
+  background: var(--color-2);
+}
+
+:host ::ng-deep .p-slider .p-slider-range {
+  background: var(--color-2);
+}

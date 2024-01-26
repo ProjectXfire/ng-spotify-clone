@@ -1,0 +1,16 @@
+@if (storeService.getPlaylists.length === 0) {
+  <app-message message="No playlists found, please create one" />
+}
+<ul class="container">
+  @for (playlist of storeService.getPlaylists; track playlist.id) {
+    <li>
+      <button class="playlist" type="button" (click)="onAddSongToPlaylist(playlist.id)">
+        <img [src]="playlist.cover ?? '/assets/images/song.png'" [alt]="playlist.name" />
+        <div class="playlist__detail">
+          <p>{{ playlist.name }}</p>
+          <p>Tracks {{ playlist.songs.length }}</p>
+        </div>
+      </button>
+    </li>
+  }
+</ul>

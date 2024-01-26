@@ -1,0 +1,56 @@
+.oauth-container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+
+.oauth-button {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-1);
+  border-radius: var(--border-radius-2);
+  outline: none;
+  border: 1px solid var(--color-2);
+  cursor: pointer;
+  color: var(--color-2);
+  font-size: 1rem;
+  background-color: var(--color-1);
+  transition: all var(--animation);
+}
+
+.oauth-button i {
+  font-size: 1.2rem;
+}
+
+.oauth-button:hover {
+  background-color: var(--color-3);
+}
+
+.oauth-button:active {
+  scale: 0.98;
+}
+
+.disabled {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-1);
+  border-radius: var(--border-radius-2);
+  outline: none;
+  border: 1px solid var(--color-2);
+  cursor: pointer;
+  color: var(--color-2);
+  font-size: 1rem;
+  background-color: var(--color-1);
+  opacity: 0.5;
+}
+
+.disabled i {
+  font-size: 1.2rem;
+}

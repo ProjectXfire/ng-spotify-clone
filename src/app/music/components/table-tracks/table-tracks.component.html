@@ -1,0 +1,42 @@
+<app-dialog-container
+  title="Add to playlist"
+  [isOpen]="isOpenAddToPlaylistDialog"
+  (onHide)="onHideMenu()"
+  [maxWidth]="400"
+>
+  <app-playlist-dialog [track]="trackSelected" (close)="onCloseMenu()" />
+</app-dialog-container>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Album</th>
+      <th>Artist</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (track of tracks; track track._id) {
+      <tr class="table-row">
+        <td class="table-data">
+          <div class="table-data-img">
+            <button type="button" (click)="onPlay(track)"><i class="pi pi-caret-right"></i></button>
+            <img [src]="track.cover" [alt]="track.name" />
+          </div>
+          <div class="table-data-title">
+            <p>{{ track.name }}</p>
+            <p>{{ track.album }}</p>
+          </div>
+        </td>
+        <td>{{ track.album }}</td>
+        <td>{{ track.artist.name }}</td>
+        <td>
+          <app-menu
+            [items]="tracklistOptions ? itemsPlaylist : items"
+            (openMenu)="setTrack(track)"
+          />
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

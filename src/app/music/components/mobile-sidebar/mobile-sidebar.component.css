@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--slate-light);
+}
+
+.upgrade {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  color: var(--slate-light);
+  border: 1px solid var(--color-2);
+  background-color: var(--color-1);
+  cursor: pointer;
+  transition: all var(--animation);
+}
+
+.create {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--gap-1);
+  border-radius: 20px;
+  color: var(--slate-light);
+  border: 1px solid var(--color-2);
+  background-color: var(--color-1);
+  cursor: pointer;
+  transition: all var(--animation);
+}
+
+.create:hover {
+  background-color: var(--color-2);
+}
+
+.upgrade:hover {
+  background-color: var(--color-2);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+
+.link {
+  width: 100%;
+  cursor: pointer;
+}
+
+.link-line-container {
+  display: flex;
+  justify-content: center;
+}
+
+.link-line {
+  width: 0%;
+  height: 1px;
+  margin-top: 10px;
+  background-color: var(--color-2);
+  transition: all var(--animation);
+}
+
+.link:hover .link-line {
+  width: 100%;
+}
+
+.link a {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-1);
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--slate-light);
+}
+
+.link i {
+  font-size: 1.2rem;
+  color: var(--slate-light);
+}

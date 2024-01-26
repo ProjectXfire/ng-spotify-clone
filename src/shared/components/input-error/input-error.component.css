@@ -1,0 +1,5 @@
+.input-error {
+  padding-left: 10px;
+  color: var(--error);
+  font-size: 0.9rem;
+}

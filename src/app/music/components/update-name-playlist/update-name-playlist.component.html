@@ -1,0 +1,26 @@
+<form class="container" [formGroup]="updateNamePlaylistForm" (ngSubmit)="onSubmit()">
+  <input
+    [style]="{ 'background-color': 'var(--color-1)', color: 'var(--slate-light)' }"
+    type="text"
+    placeholder="Name"
+    pInputText
+    formControlName="name"
+  />
+  @if (name?.invalid && (name?.dirty || name?.touched)) {
+    @if (name?.errors?.['required']) {
+      <app-input-error message="Field is required" />
+    }
+  }
+  <div class="form__actions">
+    <p-button
+      [style]="{ color: 'white' }"
+      type="button"
+      label="Cancel"
+      [text]="true"
+      severity="secondary"
+      [size]="'small'"
+      (onClick)="onClose()"
+    ></p-button>
+    <p-button type="submit" label="Update" severity="success" [size]="'small'"></p-button>
+  </div>
+</form>

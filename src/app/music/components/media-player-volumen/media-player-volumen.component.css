@@ -1,0 +1,44 @@
+:host {
+  justify-self: flex-end;
+}
+
+.container {
+  width: 100%;
+  display: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.volumen-icon {
+  cursor: pointer;
+  color: var(--color-2);
+}
+
+.slider {
+  width: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+  }
+}
+
+:host ::ng-deep .p-slider-handle {
+  border-color: var(--color-2);
+}
+
+:host ::ng-deep .p-slider .p-slider-handle:hover {
+  border-color: var(--color-2);
+  background: var(--color-2);
+}
+
+:host ::ng-deep .p-slider .p-slider-handle:focus {
+  border-color: var(--color-2);
+  box-shadow: none;
+  background: var(--color-2);
+}
+
+:host ::ng-deep .p-slider .p-slider-range {
+  background: var(--color-2);
+}

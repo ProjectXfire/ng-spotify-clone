@@ -1,0 +1,8 @@
+<p-menu #menu [model]="items" [popup]="true"></p-menu>
+<p-button
+  icon="pi pi-ellipsis-v"
+  [rounded]="true"
+  [text]="true"
+  [style]="{ color: 'var(--color-2)' }"
+  (click)="onOpenMenu($event, menu)"
+></p-button>

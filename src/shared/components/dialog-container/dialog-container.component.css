@@ -1,0 +1,8 @@
+:host ::ng-deep .p-dialog .p-dialog-header {
+  background: var(--color-5);
+  color: var(--slate-light);
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+  background: var(--color-5);
+}

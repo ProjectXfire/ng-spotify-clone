@@ -1,0 +1,15 @@
+<footer class="container" [ngClass]="{ active: track }">
+  <app-media-player-track [track]="track" />
+  <app-media-player-controls
+    (play)="onPlay()"
+    (pause)="onPause()"
+    (next)="onNextSong($event)"
+    (previous)="onPreviousSong($event)"
+    [isPlaying]="isPlaying"
+    [duration]="duration"
+    [currentTime]="currentTime"
+    [progressBarTime]="progressBarTime"
+    (updateTimeTrack)="onUpdateTrackTime($event)"
+  />
+  <app-media-player-volumen (emitVolumen)="onSetVolumen($event)" />
+</footer>

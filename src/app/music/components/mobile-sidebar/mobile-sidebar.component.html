@@ -1,0 +1,28 @@
+<app-dialog-container
+  title="Create playlist"
+  [isOpen]="isVisible"
+  (onHide)="onHideCreateListDialog()"
+>
+  <app-create-playlist (close)="closeCreateListDialog()" />
+</app-dialog-container>
+<aside class="container">
+  <h1>{{ appName }}</h1>
+  <button class="upgrade" type="button" name="upgrade">Upgrade your account</button>
+  <ul class="links">
+    @for (link of homeRoutes; track link.name) {
+      <li class="link">
+        <a [routerLink]="[link.path]" (click)="onCloseSidebar()">
+          <i [class]="'pi pi-' + link.icon"></i>
+          <p>{{ link.name }}</p>
+        </a>
+        <div class="link-line-container">
+          <div class="link-line"></div>
+        </div>
+      </li>
+    }
+  </ul>
+  <button type="button" name="create-list" class="create" (click)="openCreateListDialog()">
+    <i class="pi pi-plus"></i>New list
+  </button>
+  <app-playlists-sidebar />
+</aside>

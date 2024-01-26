@@ -1,0 +1,34 @@
+:host ::ng-deep .p-menu.p-menu-overlay {
+  background-color: var(--color-1);
+}
+
+:host ::ng-deep .p-menuitem-content:hover {
+  background-color: var(--color-5) !important;
+}
+
+:host ::ng-deep .p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+  font-size: 0.8rem;
+  color: white;
+}
+
+:host ::ng-deep .p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-icon {
+  font-size: 0.8rem;
+  color: white;
+}
+
+:host
+  ::ng-deep
+  .p-menu
+  .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus
+  > .p-menuitem-content {
+  background-color: transparent;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  background: var(--color-5);
+  color: var(--slate-light);
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+  background: var(--color-5);
+}

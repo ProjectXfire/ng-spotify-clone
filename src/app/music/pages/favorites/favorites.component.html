@@ -1,0 +1,16 @@
+<section class="container">
+  <app-playlist-header
+    cover="/assets/images/favorites.png"
+    name="Favorites"
+    (playPlaylist)="onPlayPlaylist()"
+    [songsLength]="favoritesSongs.length"
+  />
+  <div class="table-container">
+    <app-table-tracks
+      [tracks]="favoritesSongs"
+      [tracklistOptions]="true"
+      (play)="onPlay($event)"
+      (delete)="onDelete($event)"
+    />
+  </div>
+</section>

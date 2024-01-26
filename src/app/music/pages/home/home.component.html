@@ -1,0 +1,17 @@
+<p-sidebar
+  [visible]="mobileSidebarService.isOpen()"
+  (onHide)="onCloseSidebar()"
+  [style]="{ 'background-color': 'var(--color-3)' }"
+>
+  <app-mobile-sidebar />
+</p-sidebar>
+<section class="container">
+  <div class="sidebar-container">
+    <app-sidebar />
+  </div>
+  <div class="content-container">
+    <app-header-user />
+    <router-outlet></router-outlet>
+  </div>
+</section>
+<app-media-player />

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="controls-container">
+    <div class="controls">
+      <button class="controls__next" type="button" (click)="onPrevious()">
+        <i class="pi pi-step-backward"></i>
+      </button>
+      @if (isPlaying) {
+        <button class="controls__play" type="button" (click)="onPause()">
+          <i class="pi pi-pause"></i>
+        </button>
+      } @else {
+        <button class="controls__play" type="button" (click)="onPlay()">
+          <i class="pi pi-caret-right"></i>
+        </button>
+      }
+      <button class="controls__next" type="button" (click)="onNext()">
+        <i class="pi pi-step-forward"></i>
+      </button>
+    </div>
+  </div>
+  <div class="progress-bar-container">
+    <p>{{ currentTime }}</p>
+    <p-slider
+      class="progress-bar"
+      [min]="0"
+      [max]="progressBarTime.duration"
+      [(ngModel)]="progressBarTime.currentTime"
+      (ngModelChange)="onUpdateTimeTrack($event)"
+    ></p-slider>
+    <p>{{ duration }}</p>
+  </div>
+</div>

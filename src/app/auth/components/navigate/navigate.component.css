@@ -1,0 +1,13 @@
+.link {
+  padding: 10px;
+}
+
+.link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-3);
+}
+
+.link a:hover {
+  color: var(--color-2);
+}

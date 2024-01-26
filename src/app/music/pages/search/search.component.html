@@ -1,0 +1,6 @@
+<section class="container">
+  <app-input-search (value)="onSearch($event)" placeholder="Artist, songs, title..." />
+  <div class="table-container">
+    <app-table-tracks [tracks]="tracks" (play)="onPlay($event)" />
+  </div>
+</section>

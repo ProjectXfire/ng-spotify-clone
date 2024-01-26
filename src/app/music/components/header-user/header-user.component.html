@@ -1,0 +1,45 @@
+<nav class="container">
+  <div class="nav-app">
+    <p-button
+      class="nav-app__sidebar"
+      severity="secondary"
+      size="small"
+      [text]="true"
+      icon="pi pi-bars"
+      (onClick)="onOpenSidebar()"
+    ></p-button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-upgrade" type="button" name="upgrade">Upgrade your account</button>
+    @if (user && user.photoURL) {
+      <div class="nav-avatar">
+        <p-avatar
+          class="avatar"
+          [image]="user.photoURL"
+          styleClass="mr-2"
+          size="normal"
+          shape="circle"
+        ></p-avatar>
+        <p>{{ user.displayName }}</p>
+      </div>
+    } @else {
+      <div class="nav-avatar">
+        <p-avatar
+          class="avatar"
+          icon="pi pi-user"
+          styleClass="mr-2"
+          size="normal"
+          shape="circle"
+        ></p-avatar>
+        <p>{{ user?.displayName }}</p>
+      </div>
+    }
+    <p-button
+      severity="secondary"
+      size="small"
+      [text]="true"
+      icon="pi pi-sign-out"
+      (click)="signOut()"
+    ></p-button>
+  </div>
+</nav>

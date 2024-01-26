@@ -1,0 +1,47 @@
+<article>
+  <h1>{{ name }}</h1>
+  <form class="signin-form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <span class="p-input-icon-left">
+      <i class="pi pi-envelope"></i>
+      <input
+        class="p-inputtext-sm"
+        formControlName="email"
+        pInputText
+        type="text"
+        placeholder="Email"
+      />
+    </span>
+    @if (email?.invalid && (email?.dirty || email?.touched)) {
+      @if (email?.errors?.['required']) {
+        <app-input-error message="Field is required" />
+      }
+      @if (email?.errors?.['email']) {
+        <app-input-error message="Must be an email" />
+      }
+    }
+    <span class="p-input-icon-left">
+      <i class="pi pi-lock"></i>
+      <input
+        class="p-inputtext-sm"
+        formControlName="password"
+        pInputText
+        type="password"
+        placeholder="Passsword"
+      />
+    </span>
+    @if (password?.invalid && (password?.dirty || password?.touched)) {
+      @if (password?.errors?.['required']) {
+        <app-input-error message="Field is required" />
+      }
+      @if (password?.errors?.['pattern']) {
+        <app-input-error
+          message="Password must have at least 1 uppercase, 1 number and min 8 characters"
+        />
+      }
+    }
+    <button class="p-button-sm p-button-success" type="submit" pButton label="Sign In"></button>
+  </form>
+  <app-navigate message="You can create an account" clickMessage="here" navigateTo="/auth/signup" />
+  <app-divider message="Or" />
+  <app-oauth [isLoading]="isLoading" />
+</article>

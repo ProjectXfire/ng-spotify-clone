@@ -1,0 +1,9 @@
+<div class="search">
+  <input
+    type="text"
+    [(ngModel)]="term"
+    [placeholder]="placeholder"
+    (keypress)="onKeyPress($event)"
+  />
+  <i class="pi pi-search"></i>
+</div>

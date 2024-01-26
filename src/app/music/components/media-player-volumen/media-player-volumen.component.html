@@ -1,0 +1,18 @@
+<div class="container">
+  @if (volumen() === 0) {
+    <i class="pi pi-volume-off volumen-icon" (click)="onClickVolumen0()"></i>
+  } @else if (volumen() > 0 && volumen() < 30) {
+    <i class="pi pi-volume-down volumen-icon" (click)="onClickVolumen()"></i>
+  } @else {
+    <i class="pi pi-volume-up volumen-icon" (click)="onClickVolumen()"></i>
+  }
+  <form class="slider" [formGroup]="slider">
+    <p-slider
+      [min]="0"
+      [max]="100"
+      formControlName="value"
+      [style]="{ 'background-color': 'var(--color-1)' }"
+      (onChange)="onChageVolumen($event)"
+    ></p-slider>
+  </form>
+</div>

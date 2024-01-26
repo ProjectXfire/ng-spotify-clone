@@ -1,0 +1,11 @@
+<p-dialog
+  [header]="title"
+  [modal]="true"
+  [(visible)]="isOpen"
+  [draggable]="false"
+  [resizable]="false"
+  [style]="{ width: '95%', 'max-width': maxWidth + 'px' }"
+  (onHide)="onClosing()"
+>
+  <ng-content></ng-content>
+</p-dialog>

@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "_id": 1,
+      "name": "Moonlit Walk",
+      "album": "Chill Lo-Fi Music",
+      "cover": "https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353",
+      "artist": {
+        "name": "LoFi Dreamer",
+        "nickname": "LoFi Dreamer",
+        "nationality": "FR"
+      },
+      "url": "/assets/tracks/01.mp3"
+    },
+    {
+      "_id": 2,
+      "name": "Coffee Daze",
+      "album": "Midnight Tales",
+      "cover": "https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187",
+      "artist": {
+        "name": "Urban Nocturne",
+        "nickname": "Urban Nocturne",
+        "nationality": "US"
+      },
+      "url": "/assets/tracks/02.mp3"
+    },
+    {
+      "_id": 3,
+      "name": "Skyline Serenade",
+      "album": "Study Session",
+      "cover": "https://cdns-images.dzcdn.net/images/cover/1db3f8f185e68f26feaf0b9d72ff1645/350x350.jpg",
+      "artist": {
+        "name": "Tenno",
+        "nickname": "Tenno",
+        "nationality": "US"
+      },
+      "url": "/assets/tracks/03.mp3"
+    },
+    {
+      "_id": 4,
+      "name": "Urban Echoes",
+      "album": "Chill Lo-Fi Music",
+      "cover": "https://f4.bcbits.com/img/a1435058381_65.jpg",
+      "artist": {
+        "name": "Raimu",
+        "nickname": "Raimu",
+        "nationality": "UK"
+      },
+      "url": "/assets/tracks/04.mp3"
+    },
+    {
+      "_id": 5,
+      "name": "Night's End",
+      "album": "Study Session",
+      "cover": "https://f4.bcbits.com/img/a1962013209_16.jpg",
+      "artist": {
+        "name": "Nadav Cohen",
+        "nickname": "Nadav Cohen",
+        "nationality": "IT"
+      },
+      "url": "/assets/tracks/05.mp3"
+    }
+  ]
+}

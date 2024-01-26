@@ -1,0 +1,17 @@
+<ul class="list">
+  @for (list of storeService.getPlaylists; track list.id) {
+    <li
+      class="list__item"
+      [ngClass]="{ 'list__item--active': routeSelected === '/playlist/' + list.id }"
+    >
+      <button
+        class="list__item-button"
+        name="list"
+        type="button"
+        (click)="onSelectPlaylist(list.id)"
+      >
+        {{ list.name }}
+      </button>
+    </li>
+  }
+</ul>

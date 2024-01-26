@@ -1,0 +1,28 @@
+<app-dialog-container
+  title="Create playlist"
+  [isOpen]="isVisible"
+  (onHide)="onHideCreateListDialog()"
+>
+  <app-create-playlist (close)="closeCreateListDialog()" />
+</app-dialog-container>
+<aside class="container">
+  <ul class="links">
+    @for (link of homeRoutes; track link.name) {
+      <a
+        class="link"
+        [ngClass]="{ 'active-link': routeSelected === link.path }"
+        [routerLink]="[link.path]"
+      >
+        <i [class]="'pi pi-' + link.icon"></i>
+        <span>{{ link.name }}</span>
+      </a>
+    }
+  </ul>
+  <app-divider color="var(--color-2)" />
+  <div class="list-container">
+    <button type="button" name="create-list" class="list-action" (click)="openCreateListDialog()">
+      <i class="pi pi-plus"></i>New list
+    </button>
+    <app-playlists-sidebar />
+  </div>
+</aside>

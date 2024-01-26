@@ -1,0 +1,9 @@
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+
+.signin-form input {
+  width: 100%;
+}

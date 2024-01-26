@@ -1,0 +1,18 @@
+<div class="oauth-container">
+  <button
+    [ngClass]="{ disabled: isLoading, 'oauth-button': !isLoading }"
+    [disabled]="isLoading"
+    (click)="withGoogle()"
+  >
+    <i class="pi pi-google"></i>
+    <span>Google</span>
+  </button>
+  <button
+    [ngClass]="{ disabled: isLoading, 'oauth-button': !isLoading }"
+    [disabled]="isLoading"
+    (click)="withGithub()"
+  >
+    <i class="pi pi-github"></i>
+    <span>Github</span>
+  </button>
+</div>

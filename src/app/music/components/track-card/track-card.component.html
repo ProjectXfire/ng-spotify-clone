@@ -1,0 +1,68 @@
+<p-menu
+  [style]="{ border: '1px solid var(--color-2)' }"
+  #menu
+  [model]="items"
+  [popup]="true"
+></p-menu>
+<p-dialog
+  header="Add to playlist"
+  [(visible)]="isOpenAddToPlaylistDialog"
+  [modal]="true"
+  [breakpoints]="{ '0px': '100%' }"
+  [style]="{ width: '100%', 'max-width': '400px' }"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="true"
+  (onHide)="onHideMenu()"
+>
+  <app-playlist-dialog [track]="trackSelected" (close)="onCloseMenu()" />
+</p-dialog>
+@if (cartType === 'vertical') {
+  <article class="vertical-container">
+    <div class="container-hover"></div>
+    <div class="vertical-container__img">
+      <img [src]="track?.cover" [alt]="track?.album" />
+      <p-button
+        class="vertical-play"
+        icon="pi pi-play"
+        [rounded]="true"
+        severity="success"
+        (onClick)="onPlayTrack()"
+      ></p-button>
+      <p-button
+        class="vertical-menu"
+        icon="pi pi-ellipsis-v"
+        [rounded]="true"
+        severity="secondary"
+        (click)="onOpenMenu(track!, $event, menu)"
+      ></p-button>
+    </div>
+    <div class="vertical-container__info">
+      <p>{{ track?.name }}</p>
+      <p>{{ track?.album }}</p>
+    </div>
+  </article>
+} @else {
+  <article class="horizontal-container">
+    <div class="container-hover"></div>
+    <div class="horizontal-detail">
+      <img [src]="track?.cover" [alt]="track?.album" />
+      <p>{{ track?.name }}</p>
+    </div>
+    <p-button
+      class="horizontal-play"
+      icon="pi pi-play"
+      [rounded]="true"
+      severity="success"
+      (onClick)="onPlayTrack()"
+    ></p-button>
+    <p-button
+      class="horizontal-menu"
+      icon="pi pi-ellipsis-v"
+      [rounded]="true"
+      [text]="true"
+      severity="success"
+      (click)="onOpenMenu(track!, $event, menu)"
+    ></p-button>
+  </article>
+}

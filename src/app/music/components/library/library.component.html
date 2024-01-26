@@ -1,0 +1,30 @@
+<app-dialog-container
+  title="Rename playlist"
+  [isOpen]="isOpenUpdatePlaylistDialog"
+  (onHide)="onHideUpdatePLaylistName()"
+>
+  @if (isOpenUpdatePlaylistDialog) {
+    <app-update-name-playlist
+      [playlistId]="playlistSelectedId"
+      [playlistName]="playlistSelectedName"
+      (update)="onUpdatePLaylistName($event)"
+      (close)="onCloseUpdatePLaylistName()"
+    />
+  }
+</app-dialog-container>
+<ul class="container">
+  @for (playlist of myPlaylists; track playlist.id) {
+    <li>
+      <button type="button" class="playlist" (click)="onSelectPlaylist(playlist.id)">
+        <img class="playlist-img" [src]="playlist.cover ?? '/assets/images/song.png'" alt="song" />
+        <div class="playlist-content">
+          <div class="playlist__detail">
+            <p>{{ playlist.name }}</p>
+            <p>Playlist º {{ username }}</p>
+          </div>
+          <app-menu [items]="items" (openMenu)="onOpenMenu(playlist.id, playlist.name)" />
+        </div>
+      </button>
+    </li>
+  }
+</ul>
