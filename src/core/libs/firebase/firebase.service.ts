@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signOut, type Auth } from 'firebase/auth';
+import { getAuth, type Auth } from 'firebase/auth';
 import { type Firestore, getFirestore } from 'firebase/firestore/lite';
-import { type IResponse } from 'src/core/interfaces';
-import { environment as envDev } from 'src/environments/environment.development';
 import { environment as envProd } from 'src/environments/environment';
 
 @Injectable({
@@ -14,7 +12,7 @@ export class FirebaseService {
   private db: Firestore;
 
   constructor() {
-    const app = initializeApp(envDev.firebaseConfig);
+    const app = initializeApp(envProd.firebaseConfig);
     this.auth = getAuth(app);
     this.db = getFirestore(app);
   }
